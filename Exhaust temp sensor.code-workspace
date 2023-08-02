@@ -6,7 +6,10 @@
 	],
 	"settings": {
 		"cSpell.words": [
-			"oled"
+			"deinit",
+			"oled",
+			"pico",
+			"statemachine"
 		]
 	}
 }
