@@ -41,11 +41,13 @@ else:
 
 oled = SSD1306_I2C(screen_width, screen_height, i2c_dev)  # oled controller
 
+hw = Hardware(oled)
+
 # Start the state machine
-sm = StateMachine()
-sm.add_state(StartState(oled))
-sm.add_state(MonitorState(oled))
-sm.add_state(MenuState(oled))
+sm = StateMachine(hw)
+sm.add_state(StartState())
+sm.add_state(MonitorState())
+sm.add_state(MenuState())
 sm.go_to_state('start')
 
 # Attach event handlers to the button presses
